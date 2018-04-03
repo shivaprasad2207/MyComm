@@ -1,0 +1,91 @@
+<div class="container">
+
+<div class="jumbotron" style="background:#20B2AA; height:200px;padding:15px;margin:5px">     
+
+          <table > <tr>
+           <td style="float:right;clear:left">
+            
+            <img alt="pics" src="/static/images/My-Comm/logo.jpg" height="140px" width="240px"  style="float:right; padding:5px">
+          </td>
+          <td>
+            <h3 style="color:#FFFFF0;"><a href="#" style="color:#FFFFF0;">&nbsp&nbsp My Community </a></h1>
+            <font style="padding:1px;margin:8px;color:#991A42;text-shadow:3px;font-size:small">&nbsp&nbsp Search your neighbhours</font>
+          </td>
+          </tr>
+          </table>
+          
+         <div style="float:right;">
+                  <table>
+		      <tr>
+			      <td colspan="3">
+				My Flat # [% uname  %]	
+			      </td>
+		      </tr>	      
+                     <tr>
+                                <td>
+                                    <a href="index.pl?AppParam=ShowMsgMainForm">
+                                        <font size="3px" color="black"><b>[% u_count %] &nbsp New Unread Messages</b></font>
+                                     </a>
+                                </td>
+                                <td>
+                                     <a href="index.pl?AppParam=ShowMsgMainForm">   
+                                       <font size="3px" color="black"><b>[% b_count %] &nbsp New Broadcast Messages</b></font>
+                                     </a>
+                                </td>
+                                <td>
+                                       <a href="index.pl?AppParam=ShowMsgMainForm">   
+                                           <font size="3px" color="black"><b>[% a_count %] &nbsp Admin Messages</b></font>
+                                      </a> 
+                                </td>
+                 </tr>
+                  </table>
+          
+          
+         </div> 
+</div>    
+   
+
+<!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation" style="background:#FFC383">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.pl?AppParam=MainPage">Home</a>
+        </div>
+        <div class="navbar-collapse ">
+
+          <!-- Left nav -->
+          <ul class="nav navbar-nav">
+             <li> <a href="index.pl?AppParam=ShowProfileData"><b>My Profile</b></a>  </li>         
+             <li><a href="#"><b> Manage Profile</b><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="index.pl?AppParam=ShowProfileData">View Profile</a></li>
+                <li><a href="index.pl?AppParam=UpLoadForm">Upload Profile</a></li>
+                <li><a href="index.pl?AppParam=ModifyProfileForm">Modify Profile</a></li>
+                <li><a href="index.pl?AppParam=DeleteProfileForm">Delete Profile</a></li>
+              </ul>
+            </li>
+            
+            <li> <a href="index.pl?AppParam=SelectNeibhourForm"><b>Search Neighbour</b></a>  </li>
+            <li> <a href="index.pl?AppParam=ShowMsgMainForm"><b>Messaging</b></a>  </li>
+            <li> <a href="index.pl?AppParam=GeneralSearchForm"><b>General Search</b></a>  </li>
+            <li><a href="index.pl?AppParam=GetBroadCastMsg">BroadCast Message</a> </li>       
+	   
+	   <li><a href="#" onclick="javascript:logout( '[% sid %]' )"> Logout </a> </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+
+<div class="jumbotron" height:150px;padding:5px"> 
+
+ 
+
+[% notice %]
+ 
+</div>
+</div>

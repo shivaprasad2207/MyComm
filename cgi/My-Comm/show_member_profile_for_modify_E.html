@@ -1,0 +1,259 @@
+
+<div
+       style="
+            position: absolute;
+            top: 20px;
+            left:10%;
+            right:10%;
+            background-color:#F6FA1D;
+            height:100px;
+            border-style: none;
+            border-color:#7A7B21;
+            border-radius : 15px;
+            border-bottom-left-radius : 15px;
+         "      
+
+>  
+    
+<span style="position: absolute;padding:10px;top:15px">   
+ <img width="200" height="150" src="/static/images/My-Comm/logo.jpg" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+</span>
+<div style="
+            top:5px;
+            float:right;
+            padding : 20px;
+            font-size: 30px;
+            font-weight:normal;
+            margin:20px;
+           "               
+>
+
+
+<a href="index.pl?AppParam=MainPage" > Home </a> &nbsp&nbsp &nbsp&nbsp
+
+<a href="#" onclick="javascript:logout( '[% sid %]' )"> Logout </a> &nbsp&nbsp
+
+</div>
+
+<div style="
+            position: absolute;
+            top: 120px;
+            left:10%;
+            right:10%;
+          "
+>
+  
+
+<div  style="
+            position: absolute;      
+            width:3%;
+            left:0%;
+            height:100%;
+            background-color:orange;
+            border-style:solid;
+            border-color:#F9F3D8;
+            float:left;
+           " 
+>    
+
+</div>
+
+
+ 
+ 
+  <h3> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font color="red"> * Marked are mandatory fields </font> </h3> 
+<form id="profile_add_form" method="post" action="index.pl" enctype="multipart/form-data">
+<table id="test_case_add" border="4px" cellpadding="10px"  align="center" style="margin-left:25%">
+      <tr><td colspan=2> <h3 > Modify the details for upload </h3> </td></tr>
+      <tr>
+	  <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                      "  
+	    >
+	       <b> * First Name </b>
+	    </td>
+	    <td>
+	         <input type="text"  value="[% fname %]" id="fname" name="fname" size="60">
+		 <input type="hidden" value="[% photo_name %]" id="fname" name="photo_name" size="60">
+		 <input type="hidden" value="[% member_id %]" id="fname" name="member_id" size="60">
+	    </td>
+      </tr>
+      <tr>
+	  <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                      "  
+	    >
+	          <b> * Last Name </b>
+	    </td>
+	    <td>
+	       <input type="text" value="[% lname %]" id="lname" name="lname" size="60">
+	    </td>
+      </tr>
+      <tr>	  
+          <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                     <b>Working Company/School </b> 
+	    </td>
+            <td>
+	       <input type="text" value="[% company %]" id="company" name="company" size="60">
+	    </td>   
+	</tr>   
+        <tr>	  
+          <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                     <b>Designation/Standard </b>
+	    </td>
+            <td>
+	       <input type="text" value="[% designation %]" id="designation" name="designation" size="60">
+	    </td>   
+	</tr>  
+        <tr>	  
+          <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                  <b>Mobile Number</b> 
+	    </td>
+            <td>
+	       <input type="text" value="[% mobile %]" id="mobile" name="mobile" size="120">
+	    </td>   
+	</tr>           
+   
+        <tr>	  
+          <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                  <b>Email Id </b>
+	    </td>
+            <td>
+	       <input type="text" value="[% email %]" id="email" name="email" size="120">
+	    </td>   
+	</tr> 
+        
+	<tr>	  
+           <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+	    <img width="200" height="150" src="/static/images/My-Comm/photos/[% photo_name %]" >
+	   </td>   
+	   
+	   <td>
+	       Your Exiting Profile Photo 
+	   </td> 
+	</tr>
+	  <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                     <b> Upload your New Photo </b>
+	    </td>
+            <td align="center">
+	                   <input type="file" name="upfile"> <br><br>
+                            <br>
+			   <input type="hidden" value="ModifiedProfileData" id="fname" name="AppParam" size="60">
+	    </td>   
+	</tr> 
+   
+   </table>
+<br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+
+<input type="submit" value="update profile"> &nbsp&nbsp<div id="from_load"> </div>
+
+</form>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font color="red"> * Marked are mandatory fields </font> 
+
+
+
+<div  style="
+            position: absolute;
+	    top: 0px;
+            width:3%;
+            right:0%;
+            height:100%;
+            background-color:orange;
+            border-style:solid;
+            border-color:#F9F3D8;
+            float:right;
+           " 
+>    
+
+</div>
+
+
+</div>
+
+
+

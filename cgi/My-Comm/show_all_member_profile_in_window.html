@@ -1,0 +1,203 @@
+
+[% IF count == 1 %]
+[% FOREACH i = profiles %] 
+ <table border="4px" cellpadding="10px"  align="center" style="margin-left:120px">
+    <tr>
+       <td>  <img width="200" height="150" src="/static/images/My-Comm/photos/[% i.photo_name %]" > <td>
+ 
+       <td>  
+  
+  
+    <table  border="4px" cellpadding="10px"  align="center" style="margin-left:120px">
+      <tr>
+	  <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                      "  
+	    >
+	       <b> * First Name </b>
+	    </td>
+	     <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:black; 
+                      "  
+	    >
+	       <b>[% i.fname %]   </b>
+      </tr>
+      
+      
+      <tr>
+	  <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                      "  
+	    >
+	          <b> * Last Name </b>
+	    </td>
+	    <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:black; 
+                      "  
+	    >
+	       <b> [% i.lname %] </b>
+	    </td>
+      </tr>
+      <tr>	  
+          <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                     <b>Working Company/School </b> 
+	    </td>
+             <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:black; 
+                      "  
+	    >
+	       <b> [% i.company %]  </b>
+	</tr>   
+        <tr>	  
+          <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                     <b>Designation/Standard </b>
+	    </td>
+             <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:black; 
+                      "  
+	    >
+	       <b> [% i.designation %]  </b>
+	</tr>  
+        <tr>	  
+          <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                  <b>Mobile Number</b> 
+	    </td>
+             <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:black; 
+                      "  
+	    >
+	       <b> [% i.mobile %]  </b>
+	</tr>           
+   
+        <tr>	  
+          <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                  <b>Email Id </b>
+	    </td>
+             <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:black; 
+                      "  
+	    >
+	       <b> [% i.email %]  </b>
+	</tr> 
+        
+   </table>
+	     </td>
+    </tr>
+ </table>
+ <br><br>
+[% END %]
+
+[% ELSE %]
+
+<div style="
+            position: absolute;
+            top: 120px;
+            left:10%;
+            right:10%;
+          "
+>
+  <br><br><br>
+  <h3> <font color="red"> No Profile Found </font> </h3> 
+</div>
+[% END %]
+
+
+
+
+

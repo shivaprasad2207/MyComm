@@ -1,0 +1,41 @@
+<table cellpadding="10px" cellspacing="10px" border="2px" width="100%">
+
+ <tr align="center" style="background-color:#81F7BE;height:40px;margin:3px;">
+ <td style="margin=1px;padding:1px;">
+  <b> Date </b> 
+ </td>
+ 
+ <td style="margin=1px;padding:1px;">
+  <b>Suject</b>
+ </td>
+ 
+ <td style="margin=1px;padding:1px;">
+   <b>To</b> 
+ </td>
+ </tr>
+
+[% FOREACH i = data %]
+[% IF  i.date  %]
+ <tr>
+      
+     <td style="margin=2px;padding:2px;">
+     <a href="#" onclick="javascript:get_sent_msg_in_dialog_box('[% i.msg_id %]','[% uname %]');return false;" >[% i.date %] </a>
+     </td> 
+     <td style="margin=2px;padding:2px;">
+       <a href="#" onclick="javascript:get_sent_msg_in_dialog_box('[% i.msg_id %]','[% uname %]');return false;" >[% i.subject %] </a>
+     </td> 
+     <td style="margin=2px;padding:2px;">
+       <a href="#" onclick="javascript:get_sent_msg_in_dialog_box('[% i.msg_id %]','[% uname %]');return false;" >[% i.to_s %] </a>
+     </td> 
+ </tr>
+[% END %] 
+[% END %] 
+</table>
+     <br>
+         
+          <div id="disp"></div>
+    
+           [% FOREACH j IN pages %]
+            <a href="index.pl?AppParam=MsgDeletedFromSentBox&page=[%j%]">[ [%j%] ]</a> &nbsp&nbsp&nbsp&nbsp
+           [% END %]
+    

@@ -1,0 +1,113 @@
+<div
+       style="
+            position: absolute;
+            top: 20px;
+            left:10%;
+            right:10%;
+            background-color:#F6FA1D;
+            height:100px;
+            border-style: none;
+            border-color:#7A7B21;
+            border-radius : 15px;
+            border-bottom-left-radius : 15px;
+         "      
+
+>  
+    
+<span style="position: absolute;padding:10px;top:15px">   
+ <img width="200" height="150" src="/static/images/My-Comm/logo.jpg" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+</span>
+<div style="
+            top:5px;
+            float:right;
+            padding : 20px;
+            font-size: 30px;
+            font-weight:normal;
+            margin:20px;
+           "               
+>
+
+
+<a href="index.pl?AppParam=MainPage" > Home </a> &nbsp&nbsp &nbsp&nbsp
+
+<a href="#" onclick="javascript:logout( '[% sid %]' )"> Logout </a> &nbsp&nbsp
+
+</div>
+
+<div  style="
+            top:120px;
+            position: absolute;      
+            width:15%;
+            left:0%;
+            height:700px;
+            background-color:orange;
+            border-style:solid;
+            border-color:#F9F3D8;
+            float:left;
+           " 
+>    
+<br><br>
+
+&nbsp&nbsp&nbsp<a class="btn btn-large btn-primary" href="index.pl?AppParam=ShowInBox">
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspInBox&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp</a><br><br>
+
+&nbsp&nbsp&nbsp<a class="btn btn-large btn-primary" href="index.pl?AppParam=Compose">Message Compose</a><br><br>
+&nbsp&nbsp&nbsp<a class="btn btn-large btn-primary" href="index.pl?AppParam=MsgBroadCast">Broadcast Message</a><br><br>
+&nbsp&nbsp&nbsp<a class="btn btn-large btn-primary" href="index.pl?AppParam=MailSearchForm">Search In Message</a><br><br>
+&nbsp&nbsp&nbsp<a class="btn btn-large btn-primary" href="index.pl?AppParam=SentMessage">&nbsp&nbsp&nbspSent Message&nbsp&nbsp&nbsp&nbsp&nbsp</a><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<br>
+&nbsp&nbsp<div class="btn-group">
+  <a class="btn-large btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+    &nbsp&nbsp&nbsp Delete Box &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li> <a href="index.pl?AppParam=MsgDeletedFromInBox" > Deleted From InBox</a> </li>
+    <li> <a href="index.pl?AppParam=MsgDeletedFromSentBox" > Deleted From SentBox</a> </li>
+  </ul>
+</div>
+
+</div>
+
+<div  style="
+            top:120px;
+            position: absolute;      
+            width:81%;
+            left:16%;
+            height:700px;
+            background-color:white;
+            border-style: double;
+            border-color:orange;
+            float:right;
+           " 
+>    
+<div style="
+          background-color:#81F7BE;
+          height:200px;
+          margin:3px;
+         " 
+
+
+>
+ <br>
+ &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <input type="text" size="40" value="" id="uname" placeholder="Enter Apartment No to Check Profile"/> &nbsp&nbsp
+ <button type="submit" class="btn btn-info" onclick="javascript:show_profile_by_click ( ) ;return false">Check Profile</button>&nbsp&nbsp&nbsp&nbsp
+ <button type="submit" class="btn btn-info" onclick="javascript:add_to_tolist_by_click ( ) ;return false">Add to To list</button><br><br>
+ &nbsp&nbspTo : <input type="text" placeholder="Enter Apartment No" value="" id="to" class="span7"/> &nbsp&nbsp separate by , ( comma ) for multiple entries.
+ <br><br>
+ &nbsp&nbspSubject : <input type="text" placeholder="Enter subject" value="FW: [% subject %]" id="subject" class="span9"/>
+</div>
+
+&nbsp <textarea align="" class="span12" rows="18" value="" id="msg_text">[% msg_body %]</textarea>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button type="submit"  class="btn-large btn-success" onclick="javascript:get_mail_content( '[% uname %]' ) ;return false">&nbspSend&nbsp</button>
+<br><div id="disp"> </div>
+</div>

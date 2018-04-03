@@ -1,0 +1,44 @@
+
+
+[% topic %]
+<br>
+<table class="table table-striped" >
+
+<tr> 
+    <td>
+     <b>Discussion Topic</b>: [% quesation %]
+    </td> 
+</tr>
+
+[% FOREACH i = info %]
+  
+  <tr> 
+      <td>
+          Comment By: [% i.NAME %]
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          Dated: [% i.TIME %]
+          <br><br>
+          [% i.MSG_TXT %]
+      <br> 
+    </td>
+   </tr>
+  
+[% END %]
+
+<tr>
+  <td>
+   <br>
+    <form id="discussion_add">
+      <legend>Add Your Comments</legend>
+      <textarea id="text" rows="10" style="width:70%">
+      </textarea><br><br>
+      <input type="button" class="btn btn-success" id="discussion_add_button" value="Add Comments"
+             onclick= "javascript:discussion_add_to_thread('[% qid %]');return false;">
+    </form>
+    <p id="load_d"> </p>
+  </td>  
+</tr>
+
+
+</table>  

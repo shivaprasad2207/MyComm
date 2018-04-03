@@ -1,0 +1,32 @@
+#!/usr/bin/perl
+ 
+use Net::SMTP::TLS;
+ 
+my $smtp = new Net::SMTP::TLS(
+	'smtp.gmail.com',
+	Port    =>	587,
+	User    =>	'sender@dipinkrishna.com',
+	Password=>	'Password',
+	Timeout =>	30
+	);
+ 
+#  -- Enter email FROM below.   --
+$smtp->mail('sender@dipinkrishna.com');
+ 
+#  -- Enter recipient mails addresses below --
+$smtp->recipient('recipient1@dipinkrishna.com', 'recipient2@dipinkrishna.com');
+ 
+$smtp->data();
+ 
+#This part creates the SMTP headers you see
+$smtp->datasend("To: recipient1\@dipinkrishna.com\n");
+$smtp->datasend("From: Dipin Krishna \n");
+$smtp->datasend("Content-Type: text/html \n");
+$smtp->datasend("Subject: A Test Mail");
+# line break to separate headers from message body
+$smtp->datasend("\n");
+$smtp->datasend("This is a test mail body");
+$smtp->datasend("\n");
+$smtp->dataend();
+ 
+$smtp->quit;

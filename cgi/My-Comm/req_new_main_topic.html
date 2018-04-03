@@ -1,0 +1,27 @@
+
+    
+<br>
+<table>
+
+<tr align="center"> 
+    <td>
+        <b> Full Name: &nbsp</b> [% full_name %] <br>
+        <b>Email: &nbsp</b> [% email %] <br>
+    </td> 
+</tr>
+<tr>
+  <td>
+   <br>
+    <legend> Request for New Topic</legend>
+    <form id="req_new_main_topic">
+      <input type="text" id="main_topic_req" name=main_topic_req" value="">
+     <div align="center">
+        <input type="button" id="admin_contact_button" value="  Send  "
+             onclick= "javascript:request_new_main_topic('[% qid %]', '[% full_name %]', '[% email %]' );return false;">
+     </div>
+     <div id='req_new_main_topic_load'> </div>
+    </form>
+  </td>  
+</tr>
+
+</table>  

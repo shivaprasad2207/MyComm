@@ -1,0 +1,36 @@
+
+<table cellpadding="10px" cellspacing=="3px">
+    
+    <tr>
+    
+   [% FOREACH i = uname %]
+        <td>
+            <div class="btn-group">
+            
+        [% IF i.active == 1 %]    
+            <a class="btn-large btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                    &nbsp&nbsp&nbsp [% i.uname %] &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                   <span class="caret"></span>
+            </a>
+        [% ELSE %]
+            <a class="btn-large  btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
+                    &nbsp&nbsp&nbsp [% i.uname %] &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                   <span class="caret"></span>
+            </a>
+        [% END %]
+            
+            <ul class="dropdown-menu">
+                <li><a href="#" onclick="javascript:admin_view_occupant_profile_by_uname ('[% i.uname %]') ;return false">View Profile [% i.uname %]</a> </li>
+                <li><a href="#" onclick="javascript:admin_delete_occupant_profile_by_uname ('[% i.uname %]') ;return false">Delete Profile [% i.uname %]</a> </li>
+                <li><a href="#" onclick="javascript:admin_lock_occupant_account_by_uname('[% i.uname %]'); return false;">Lock Account [% i.uname %]</a> </li>
+                <li><a href="#" onclick="javascript:admin_unlock_occupant_account_by_uname('[% i.uname %]'); return false;">UnLock Account [% i.uname %]</a> </li>
+            </ul>
+            </div>
+        </td>
+   [% END %]
+    
+    </tr>
+    
+
+</table>    
+    

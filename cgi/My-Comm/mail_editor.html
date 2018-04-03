@@ -1,0 +1,41 @@
+<script type="text/javascript">
+	
+	var uEditorFR = {
+		bold : 'Gras',
+		italic : 'Italique',
+		link : 'Lien',
+		unorderedlist : 'Liste',
+		orderedlist : 'Liste ordonnée',
+		image : 'Insérer une image',
+		htmlsource : 'Source HTML',
+		formatblock : 'Changer le type de bloc',
+		h1 : "Titre de niveau 1",
+		h2 : "Titre de niveau 2",
+		h3 : "Titre de niveau 3",
+		h4 : "Titre de niveau 4",
+		h5 : "Titre de niveau 5",
+		h6 : "Titre de niveau 6",
+		p : "Paragraphe",
+		selectTextToHyperlink : "Veuillez sélectionner le texte que vous souhaitez transformer en lien.",
+		linkURL : "URL du lien:",
+		imageLocation : "Location de l'image:",
+		imageAlternateText : "Texte alternatif pour cette image:",
+		askForCleaning : "Le texte que vous venez de coller semble déjà formaté. Souhaitez-vous le nettoyer ?"
+	};
+	
+	$(document).ready(function() {
+		$('.uEditorCustom').uEditor({
+			translation : uEditorFR,
+			toolbarItems : ['bold','italic','link','unorderedlist','orderedlist'],
+			stylesheet : 'uEditorContent.css',
+			containerClass : 'uEditor'
+		});
+	});
+	</script>
+
+        <h1>uEditor Demo</h1>
+	<form method="post" action="index.pl">
+                <textarea class="uEditorCustom" name="textarea"><strong><em>uEditor</em> rocks !</strong></textarea>
+                <input type="submit" value="Submit">
+                <input type="hidden" name="AppParam" value="GetHTMLcontent">
+	</form>

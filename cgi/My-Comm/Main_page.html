@@ -1,0 +1,245 @@
+<style>
+.mousemessagelink {
+   border-bottom:3px double #408080;
+ 
+   height:100px;
+   }
+
+#mouseover_message_box {
+   display:none;
+   position:absolute;
+   background-color:#ffff00;
+   border:1px solid #000;
+   padding:5px;
+   max-width:300px;
+   }
+
+</style>
+
+<script type="text/javascript">
+/* 
+   Mouseover Message
+   Version 1.0
+   July 17, 2013
+
+   Will Bontrager Software, LLC
+   http://www.willmaster.com/
+   Copyright 2013 Will Bontrager Software, LLC
+
+   This software is provided "AS IS," without 
+   any warranty of any kind, without even any 
+   implied warranty such as merchantability 
+   or fitness for a particular purpose.
+   Will Bontrager Software, LLC grants 
+   you a royalty free license to use this 
+   software provided this notice appears 
+   on all copies. 
+*/
+// Customization section --
+// Specify the pixel distance from the mouse pointer for the top-left 
+//   corner of the message box. Negative values are acceptable.
+
+var MousePointerToTopOfBox = 5;
+var MousePointerToLeftOfBox = -30;
+
+// End of customization section.
+document.write('<div id="mouseover_message_box"></div>');
+var cX = 0; var cY = 0; var rX = 0; var rY = 0;
+var DivPtr = document.getElementById("mouseover_message_box");
+if(document.all) { document.onmousemove = UpdateMousePointerPositionDocAll; }
+else { document.onmousemove = UpdateMousePointerPosition; }
+
+function UpdateMousePointerPosition(e){ cX = e.pageX; cY = e.pageY;}
+
+function UpdateMousePointerPositionDocAll(e){ cX = event.clientX; cY = event.clientY;}
+
+function UndisplayMessage() { DivPtr.style.display = "none"; }
+
+function DisplayMessage(d)
+{
+	var s = d.innerHTML;
+	var i = s.indexOf('<!--');
+	var j = s.indexOf('-->');
+   DivPtr.innerHTML = s.substr((i+4),(j-i-4));
+   AssignPosition(DivPtr);
+   DivPtr.style.display = "block";
+} // function DisplayMessage()
+
+function AssignPosition(d)
+{
+   if(self.pageYOffset)
+   {
+      rX = self.pageXOffset;
+      rY = self.pageYOffset;
+   }
+   else if(document.documentElement && document.documentElement.scrollTop)
+   {
+      rX = document.documentElement.scrollLeft;
+      rY = document.documentElement.scrollTop;
+   }
+   else if(document.body)
+   {
+      rX = document.body.scrollLeft;
+      rY = document.body.scrollTop;
+   }
+   if(document.all)
+   {
+      cX += rX; 
+      cY += rY;
+   }
+   d.style.left = parseInt(cX+MousePointerToLeftOfBox) + "px";
+   d.style.top = parseInt(cY+MousePointerToTopOfBox) + "px";
+} // function AssignPosition()
+</script>
+
+
+
+
+<div class="container" style="background-image:url('/static/images/My-Comm/main_back.jpg');">
+
+<div class="jumbotron" style="background-image:url('/static/images/My-Comm/header.jpg');height:200px;padding:20px;margin:5px">     
+
+          <table > <tr>
+           <td style="float:right;clear:left">
+            
+            <img alt="pics" src="/static/images/My-Comm/logo.jpg" height="120px" width="220px"  style="float:right; padding:5px">
+          </td>
+          <td>
+            <h3 style="color:#FFFFF0;"><a href="#" style="color:#FFFFF0;">&nbsp&nbsp My Community </a></h1>
+            <font style="padding:1px;margin:8px;color:#0580ad;text-shadow:3px;font-size:small">&nbsp&nbsp Search your neighbhours</font>
+          </td>
+          </tr>
+          </table>
+          
+         <div style="float:right;">
+                  <table>
+                    <tr>
+			      <td colspan="3">
+				<font style="padding:3px;color:white"> <b>My Flat # </b> <font style="padding:3px;color:white;font-size:large">[% uname  %] </font></font>
+			      </td>
+		      </tr> 
+                     <tr>
+                                <td style="padding:5px;margin:30px">
+                                  <span class="mousemessagelink" onmouseover="DisplayMessage(this)" onmouseout="UndisplayMessage()">
+                                    <a href="index.pl?AppParam=ShowMsgMainForm">
+                                        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                                      
+                                        <font size="4px" color="white"><b>[% u_count %] &nbsp&nbsp</b></font>
+                                     </a>
+                                    <!--  New Unread Messages-->
+                                  </span>   
+                                </td>                             
+                                
+                                <td style="padding:5px">
+                                 <span class="mousemessagelink" onmouseover="DisplayMessage(this)" onmouseout="UndisplayMessage()">
+                                     <a href="index.pl?AppParam=ShowMsgMainForm">
+                                     <i class="fa fa-bullhorn fa-2x" aria-hidden="true"></i>                                        
+                                       <font size="4px" color="white"><b>[% b_count %] &nbsp&nbsp</b></font>
+                                     </a>
+                                       <!-- New Broadcast Messages-->
+                                 
+                                 </span>                                  
+                                </td>
+                                <td style="padding:5px">
+                                   <span class="mousemessagelink" onmouseover="DisplayMessage(this)" onmouseout="UndisplayMessage()">
+                                      <a href="index.pl?AppParam=ShowMsgMainForm">
+                                          <i class="fa fa-user fa-2x" aria-hidden="true"></i>                                         
+                                          <font size="4px" color="white">
+                                                    <b> [% a_count %]&nbsp&nbsp </b>
+                                            </font>
+                                       </a>
+                                                               <!-- Admin Messages-->
+                                   </span>                                     
+                                </td>
+                                
+                                <td >
+                                  &nbsp
+                                   <span class="mousemessagelink" onmouseover="DisplayMessage(this)" onmouseout="UndisplayMessage()">
+                                      <a href="#" onclick="javascript:logout( '[% sid %]' )" >
+                                         <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+                                            &nbsp
+                                          
+                                       </a>
+                                                               <!-- Logout-->
+                                   </span>                                     
+                                </td>
+                                
+                                
+                 </tr>
+                  </table>
+          
+          
+         </div> 
+</div>    
+   
+<script>
+
+function messageOn() {
+   
+ 
+ 
+}
+
+</script>
+
+<!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation" style="background-image:url('/static/images/My-Comm/tab_back.jpg');">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.pl?AppParam=MainPage"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+        </div>
+        <div class="navbar-collapse ">
+
+          <!-- Left nav -->
+          <ul class="nav navbar-nav">
+             <li> <a href="index.pl?AppParam=ShowProfileData"><b>My Profile</b></a>  </li>         
+             <li><a href="#"><b> Manage Profile</b><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="index.pl?AppParam=ShowProfileData">View Profile</a></li>
+                <li><a href="index.pl?AppParam=UpLoadForm">Upload Profile</a></li>
+                <li><a href="index.pl?AppParam=ModifyProfileForm">Modify Profile</a></li>
+                <li><a href="index.pl?AppParam=DeleteProfileForm">Delete Profile</a></li>
+              </ul>
+            </li>
+            
+            <li> <a href="index.pl?AppParam=SelectNeibhourForm"><b>Search Neighbour</b></a>  </li>
+            <li> <a href="index.pl?AppParam=ShowMsgMainForm"><b>Messaging</b></a>  </li>
+            <li> <a href="index.pl?AppParam=GeneralSearchForm"><b>General Search</b></a>  </li>
+               
+	    
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+
+<div class="jumbotron" height:150px;padding:5px" style="background-color:#ffffb7;"> 
+
+ 
+
+[% notice %]
+ 
+<pre style="background:inherit;border:inherit">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</pre>
+</div>
+<div class="jumbotron" style="background:#20B2AA; height:30px;padding:5px;text-align:center">
+	  <span ><a target="_blank" href="http://www.shivaprasad.co.in" ><font style="color:#FFFFF0";> &copy;&nbspAuthor</font></a> &nbsp&nbsp&nbsp</span>
+</div>
+
+</div>

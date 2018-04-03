@@ -1,0 +1,61 @@
+
+<div id="new_member_mod_form">
+
+<table id="test_case_add" border="1px" cellpadding="10px"  align="center" style="margin-left:10%;width:80%;background-color:#F4F8F8;">
+      <tr>
+	  <td colspan="2" align="center" style="background-color:#81F7BE;">
+	     <b> Fill the Owner Details </b>
+	        
+          
+	  
+	    <a href="#" style="float:right" onclick="javascript:close_this_window ( 'new_member_mod_form');return false;">
+	     
+	      <img src="/static/images/My-Comm/closebutton.png" height="50" width="50">
+	    </a>
+	  
+	  </td>
+      
+       </tr>
+
+<TR><td colspan="2">
+      <form id="search_form">
+      <table cellpadding="30px" align="center"  >
+	 <tr><td> 
+	 <font color="blue" size="4px">Select Block </font>
+	 <select name="block" class="span2">
+	    <option>none</option>
+	   [% FOREACH i = block %]    
+	    <option value="[% i %]" name="block_[% i %]">[% i %]</option>
+	   [% END %]	 
+         </select>
+	 </td>
+	 <td>
+	  <font color="blue" size="4px">Select Floor</font>
+	  <select name="floor" class="span2">
+	    <option>none</option>
+	    
+	 
+	  [% FOREACH i = floor %]      
+	    <option value="[% i %]" name="floor_[% i %]">[% i %]</option>
+          [% END %]
+	 
+	 
+	  </select>
+	 </td>
+	 <td>
+	     <input type="submit" class="btn btn-primary" value="Search"  onclick="javascript:admin_get_member_buttons( );return false;" >
+	    
+	 </td>
+	 </tr>
+	 <tr><td colspan="3">
+              <div id="disp">
+	       
+	      </div>
+	      </td>
+	 </tr>
+      </table>
+      </form>
+  </TD> </TR>
+</table>
+<div id="disp_profile"> </div>
+</div>

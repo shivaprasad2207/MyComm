@@ -1,0 +1,71 @@
+
+<div style="
+          background-color:#81F7BE;
+          height:40px;
+          margin:3px;
+         " 
+
+
+>
+   <span style="position:absolute;left:50%" ><b> Admin List </b> </span>
+ </div> 
+
+<table cellpadding="10px" cellspacing="10px" border="2px" width="100%">
+  <tr align="center" style="background-color:#81F7BE;height:40px;margin:1px;">
+  <td style="margin=1px;padding:1px;">
+  <b> Uname  </b> 
+ </td>
+  
+  <td style="margin=1px;padding:1px;">
+  <b> First Name</b> 
+ </td>
+ <td style="margin=1px;padding:1px;">
+  <b> Last Name </b> 
+ </td>
+ 
+ <td style="margin=1px;padding:1px;">
+  <b>Privilage</b>
+ </td>
+ 
+ <td style="margin=1px;padding:1px;">
+   <b>Action</b> 
+ </td>
+ </tr>
+
+[% FOREACH i = data %]
+ <tr>
+    <td>
+        <input type="text"  readonly="readonly" id="uname_[% i.uname %]" name="name_[% i.uname %]" value="[% i.uname %]"> 
+    </td>
+    <td>
+        <input type="text" readonly="readonly" id="fname_[% i.fname %]" name="fname_[% i.fname %]" value="[% i.fname %]"> 
+    </td>
+    <td>
+       <input type="text" readonly="readonly" id="lname_[% i.lname %]" name="name_[% i.lname %]" value="[% i.lname %]"> 
+    </td>
+    
+   [% IF i.role == 2 %]  
+     <td>
+        <input type="text" readonly="readonly" id="role_[% i.role %]" name="role_[% i.role %]" value="Sudo Admin"> 
+      </td>
+    [% END %]
+   [% IF i.role == 3 %] 
+      <td>
+       <input type="text" readonly="readonly" id="role_[% i.role %]" name="role_[% i.role %]" value="Admin"> 
+      </td>
+   [% END %]
+
+   [% IF i.role == 2 %]  
+     <td>
+        <a href="#" onclick="javascript:set_depromote_sudo_admin('[% i.uname %]');return false;" > DePromote Sudo Admin </a>
+     </td>
+   [% END %]
+   [% IF i.role == 3 %] 
+      <td>
+       <a href="#" onclick="javascript:set_delete_admin('[% i.uname %]');return false;" > Delete Admin </a>
+      </td>
+   [% END %] 
+     
+ </tr>  
+[% END %] 
+</table> 

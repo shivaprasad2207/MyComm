@@ -1,0 +1,36 @@
+<table>
+ <tr>
+  <td>
+ <span> To : </span><br> <input type="text" placeholder="BROADCAST MESSAGE " readonly="readonly" value="BROADCAST" id="to" class="span7"/>
+ 
+  </td>
+ </tr>
+ 
+ <tr>
+  <td>
+ <br><br>
+ <span> Subject : </span>
+ <br>
+  <input type="text" placeholder="Enter subject" value="" id="subject" class="span9"/>
+
+  </td>
+ </tr>
+ 
+ <tr>
+ <td>
+  <br>
+&nbsp <textarea align="" class="span9" rows="10" value="" id="msg_text"></textarea>
+
+ </td>
+ </tr>
+ <tr>
+  <td align="center">
+   
+<br>
+<button type="submit"  class="btn-large btn-success" onclick="javascript:get_mail_content( '[% uname %]' ) ;return false">&nbspSend&nbsp</button>
+  </td>
+ </tr>
+ 
+</table>
+
+<br><div id="disp"> </div>

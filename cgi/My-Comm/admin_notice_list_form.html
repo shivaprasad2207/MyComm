@@ -1,0 +1,64 @@
+
+<span style="position:absolute;left:50%" ><b> List OF Notices </b> </span>
+<br><br>
+<table cellpadding="10px" cellspacing="10px" border="2px" width="100%">
+    <tr align="center" style="background-color:#81F7BE;height:40px;margin:1px;">
+        <td style="margin=1px;padding:1px;">
+            <b> Date of Notice </b> 
+        </td> 
+        <td style="margin=1px;padding:1px;">
+           <b> Active Notice State</b> 
+        </td>
+        <td style="margin=1px;padding:1px;">
+           <b> Delte Notice </b> 
+        </td>
+    </tr>
+
+[% FOREACH i = data %]
+ <tr>
+    
+     <td style="margin=2px;padding:2px;">
+       <a href="index.pl?AppParam=ShowNoticeById&notice_id=[% i.notice_id  %]" target="_blank" > [% i.date %] </a>
+     </td> 
+    
+   [% IF i.active_flag == 1 %]  
+     <td>
+       
+        <a href="index.pl?AppParam=ShowNoticeById&notice_id=[% i.notice_id  %]" target="_blank" > 
+           <b> <font size="3" color="green"> Active</font> </b>
+        </a>
+     
+     </td>
+   [% ELSE %]
+      <td>
+      
+         <a href="index.pl?AppParam=ShowNoticeById&notice_id=[% i.notice_id  %]" target="_blank" >
+           <b> <font size="3" color="red"> Not Active</font> </b>
+         </a>
+      
+      </td>
+   [% END %]
+   
+   
+   [% IF i.active_flag == 1 %]  
+     <td>
+       
+        <a href="index.pl?AppParam=ShowNoticeById&notice_id=[% i.notice_id  %]" target="_blank" > 
+           <b> <font size="3" color="green"> Deletion not Allowed</font> </b>
+        </a>
+     
+     </td>
+   [% ELSE %]
+      <td>
+      
+         <a href="" class="btn-small btn-danger" onclick="javascript:delete_this_notice_by_id( '[% i.notice_id  %]' )" >&nbspDelete&nbsp</a>
+        
+         </a>
+      
+      </td>
+   [% END %]
+   
+[% END %] 
+  
+</table>
+</div>

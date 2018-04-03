@@ -1,0 +1,46 @@
+    
+
+
+
+
+      <form id="search_form">
+      <table cellpadding="30px" align="center"  >
+	 <tr><td> 
+	 <font color="blue" size="4px">Select Block </font>
+	 <select name="block" class="span2">
+	    <option>none</option>
+	   [% FOREACH i = block %]    
+	    <option value="[% i %]" name="block_[% i %]">[% i %]</option>
+	   [% END %]	 
+         </select>
+	 </td>
+	 <td>
+	  <font color="blue" size="4px">Select Floor</font>
+	  <select name="floor" class="span2">
+	    <option>none</option>
+	    
+	 
+	  [% FOREACH i = floor %]      
+	    <option value="[% i %]" name="floor_[% i %]">[% i %]</option>
+          [% END %]
+	 
+	 
+	  </select>
+	 </td>
+	 <td>
+	   &nbsp  &nbsp  <input type="submit" class="btn btn-primary" value="Search"  onclick="javascript:get_neighour_buttons( );return false;" >
+	    
+	 </td>
+	 </tr>
+	 <tr><td colspan="3">
+              <div id="disp">
+	       
+	      </div>
+	      </td>
+	 </tr>
+      </table>
+        
+      </form>
+
+
+

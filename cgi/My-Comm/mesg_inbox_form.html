@@ -1,0 +1,100 @@
+<div class="container">
+   
+
+</div>
+
+<table cellpadding="10px" cellspacing="10px" border="2px" width="100%">
+<tr align="center" style="background-color:#81F7BE;height:40px;margin:1px;">
+       <td colspan="7">
+         <b> InBox </b>
+       </td>
+  
+ </tr>
+ 
+  <tr align="center" style="background-color:#81F7BE;height:40px;margin:1px;">
+  <td style="margin=1px;padding:1px;">
+  <b> Mark</b> 
+ </td>
+  
+  <td style="margin=1px;padding:1px;">
+  <b> Read</b> 
+ </td>
+ <td style="margin=1px;padding:1px;">
+  <b> Date </b> 
+ </td>
+ 
+ <td style="margin=1px;padding:1px;">
+  <b>Suject</b>
+ </td>
+ 
+ <td style="margin=1px;padding:1px;">
+   <b>To</b> 
+ </td>
+ <td style="margin=1px;padding:1px;">
+ 
+   <b>From</b> 
+ </td>
+  <td style="margin=1px;padding:1px;">
+ 
+   <b>Action</b> 
+ </td>
+ </tr>
+
+[% FOREACH i = data %]
+ [% IF i.date %]
+ <tr>
+    <td>
+        <input type="checkbox" id="checkbox_[% i.msg_id %]" class="my_check_box"/> 
+    </td>
+    
+   [% IF i.read_flag == 1 %]  
+     <td>
+       <img id="[% i.msg_id %]" src="/static/images/My-Comm/red.jpg" height="12" width="12">
+      </td>
+   [% ELSE %]
+      <td>
+       <img id="[% i.msg_id %]" src="/static/images/My-Comm/green.jpg" height="12" width="12">
+      </td>
+   [% END %]
+      
+      <td style="margin=2px;padding:2px;">
+     <a href="#" onclick="javascript:get_msg_in_dialog_box('[% i.msg_id %]','[% uname %]');return false;" > [% i.date %] </a>
+     </td> 
+     <td style="margin=2px;padding:2px;">
+      <a href="#" onclick="javascript:get_msg_in_dialog_box('[% i.msg_id %]','[% uname %]');return false;" >[% i.subject %] </a>
+     </td> 
+     <td style="margin=2px;padding:2px;">
+      <a href="#" onclick="javascript:get_msg_in_dialog_box('[% i.msg_id %]','[% uname %]');return false;" >[% i.to_s %] </a>
+     </td> 
+     <td style="margin=2px;padding:2px;">
+      <a href="#" onclick="javascript:get_msg_in_dialog_box('[% i.msg_id %]','[% uname %]');return false;" >[% i.from_s %] </a>
+     </td>
+   
+    
+     <td>
+         <div class="btn-group">
+           <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+           <ul class="dropdown-menu">
+              <li><a href="index.pl?AppParam=Reply&msg_id=[% i.msg_id %]"><i class="icon-trash"></i>Reply</a></li>
+              <li><a href="index.pl?AppParam=MsgFarward&msg_id=[% i.msg_id %]"><i class="icon-trash"></i>Farward</a></li>
+              <li><a href="index.pl?AppParam=ReplyAll&msg_id=[% i.msg_id %]"><i class="icon-ban-circle"></i>ReplyAll</a></li>
+              <li><a href="index.pl?AppParam=MsgDelete&msg_id=[% i.msg_id %]"><i class="icon-pencil"></i>Delete</a></li>
+         </ul>
+         </div>
+    </td> 
+     
+ </tr>  
+[% END %] 
+ 
+[% END %] 
+</table>
+          <br>
+          <div style="position:absolute";left:50%">
+           <input type="button" value="Delete Marked" onclick="javascript:delete_marked_msg('[% uname %]');return false;">
+          </div><br>
+          <div id="disp"></div>
+          <div style="float:right;">
+           [% FOREACH j IN pages %]
+            <a href="index.pl?AppParam=ShowInBox&page=[%j%]">[ [%j%] ]</a> &nbsp&nbsp&nbsp&nbsp
+           [% END %]
+          </div>

@@ -1,0 +1,97 @@
+<div id="container2">
+<form id="name_form">
+
+   <table id="passwd_form_table" cellspacing="2px" border="2px" style= "
+                                                      border-color:green;
+                                                      background:white;
+                                                      width:100%;
+                                                      " >
+     
+                  
+                  
+                  <tr><td align="right" height="30px" bgcolor="blue">
+                       
+                       <table>
+                          <tr>
+                              <td width="40%" height="100%">
+                                 
+                              </td>
+                              <td align="right" >
+                                    <a
+                                                      href="#"
+                                                      onclick="javascript:remove_box('name_form');remove_box('container2');return false;"
+                                                      align="left"
+                                    >       
+                                                      <img id="cancel_buttons_O_ID" hight="30px" width="30px" src="/static/images/My-Blog/closebutton.png" />
+                                    </a>
+                              </td>
+                          </tr>
+                       </table>
+                 </td></tr> 
+                  
+                  <tr><td align="left" height="30px" bgcolor="yellow">
+                         <table>
+                            <tr>
+                                 <td>
+                                    <b style="font-family:Verdana, sans-serif;color:blue;"> User Login Name &nbsp: &nbsp </b>
+                                 </td>
+                                 <td>
+                                    <b style="font-family:Times New Roman, serif;font-size:20px;"> [% user_name %] </b>
+                                 </td>
+                             </tr>
+                         </table>
+                  </td></tr> 
+                  
+                  <tr><td align="left" height="40px">
+                         <table >
+                            <tr >
+                                 <td>
+                                    <b style="font-family:Verdana, sans-serif;color:blue;"> Your Preset First Name: &nbsp </b>
+                                     <input type="text" name="old_fname" id="old_fname" value="[% fname %]" id="size="40" readonly="readonly" 
+                                          style="height:30px;border-width:3px;border-style:outset;border-color:red"/>
+                                     <br><br>
+                                     
+                                     <b style="font-family:Verdana, sans-serif;color:blue;"> Your Preset Second Name: &nbsp </b>
+                                     <input type="text" name="old_lname" id="old_lname" value="[% lname %]" id="size="40" readonly="readonly" 
+                                          style="height:30px;border-width:3px;border-style:outset;border-color:red"/>
+                                    
+                                 </td>
+                            
+                            </tr>
+                            <tr> 
+                                 <td>
+                                    <b style="font-family:Verdana, sans-serif;color:blue;"> New First name &nbsp: &nbsp </b>
+                                     <input type="text" name="new_fname" id="new_fname" value="" size="40" 
+                                          style="height:30px;border-width:3px;border-style:outset;border-color:red"/>
+                                     <br><br>
+                                     <b style="font-family:Verdana, sans-serif;color:blue;"> New Last Name&nbsp: &nbsp </b>
+                                     <input type="text" name="new_lname" id="new_lname" value="" size="40" 
+                                          style="height:30px;border-width:3px;border-style:outset;border-color:red"/>
+                                     
+                                 </td>
+                            </tr>
+                         </table>
+                  </td></tr>
+                  
+                  <tr><td>
+                     <table align="center">
+                            <tr align="center">
+                                 <td>
+                                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  
+                                   <input type="submit" value="Submit" size="30" onclick="javascript:submit_user_new_name('[% uid %]');return false;"
+                                           
+                                           style="height:30px;border-width:3px;border-style:outset;border-color:blue"/>
+                                 </td>
+                             </tr>
+                         </table> 
+                  </td></tr>
+</table>
+</form>
+
+<div id="p_load_disp"> </div>
+<br><br><br><br>
+<div id="log_1"> </div>
+
+</div>

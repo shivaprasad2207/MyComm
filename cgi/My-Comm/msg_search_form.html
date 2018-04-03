@@ -1,0 +1,39 @@
+
+      <form method="post" action="index.pl" >
+      <table cellpadding="30px" align="center"  >
+	 <tr><td align="center">
+	    <input type="text" name="search" value="" class="search-query" placeholder="Enter Search in message"> <br><br>
+	  </td> </tr>
+         <tr> <td align="center">  
+           <b> Select Search field </b> <br>
+          <select name="search_body" class="span2">
+	    <option>none</option>
+	    <option value="subject" name="subject"> Search in Mesg Subject Filed </option>
+	    <option value="body" name="body"> Search in Mesg body Filed </option>
+	    <option value="both" name="both">Search in both Mesg subject and body Filed </option>
+	 </select>
+         </td> </tr> 
+	 <tr> <td align="center">
+         <br> <br>
+	  <b> Select Mail Folder </b> <br>
+	 <select name="mail_box" class="span2">
+	    <option>none</option>
+	    <option value="inbox" name="inbox"> InBox </option>
+	    <option value="SentBox" name="SentBox"> SentBox </option>
+	 </select>
+         </td> </tr>
+         <tr> <td>
+	  <input type="hidden" name="AppParam" value="GotMailSearchParam" class="search-query" placeholder="Search">
+	 </td> </tr>
+         <tr> <td align="center">
+          <br>
+          <button type="submit" class="btn">Submit</button>
+	 </td></tr>
+	 <tr><td colspan="3">
+          
+	 </td></tr>
+      </table>
+      </form>
+      
+      <div id="disp">       
+	      </div>

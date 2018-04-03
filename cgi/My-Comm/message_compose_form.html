@@ -1,0 +1,27 @@
+ <br>
+  <table>
+   <tr> <td>
+ <input type="text" size="40" value="" id="uname" placeholder="Enter Apartment No to Check Profile"/> &nbsp&nbsp
+ <button type="submit" class="btn btn-info" onclick="javascript:show_profile_by_click ( );return false">Check Profile</button>&nbsp&nbsp&nbsp&nbsp
+ <button type="submit" class="btn btn-info" onclick="javascript:add_to_tolist_by_click ( ) ;return false">Add to To list</button><br><br>
+ </td> </tr>
+ <tr> <td>
+ To : <br> <textarea align="" class="span4" rows="1" value="" id="to"></textarea> &nbsp&nbsp separate by , ( comma ) for multiple entries.
+ <br><br>
+ <tr> <td>
+ Subject : <br><input type="text" placeholder="Enter subject" value="" id="subject" class="span9"/>
+</td> </tr>
+ <tr> <td>
+ <br><br>
+<textarea align="" class="span9" rows="10" value="" id="msg_text"></textarea>
+</td> </tr>
+ 
+ <tr> <td align="center">
+ <br>
+<button type="submit"  class="btn-large btn-success" onclick="javascript:get_mail_content( '[% uname %]' ) ;return false">&nbspSend&nbsp</button>
+</td> </tr>
+  <tr> <td>
+<div id="disp"> </div>
+</td> </tr>
+ 
+  </table>
